@@ -1,4 +1,4 @@
-// Rate limiting (simple in-memory version)
+// Rate limiting
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX_REQUESTS = 100; // 100 requests per minute per IP
@@ -38,4 +38,3 @@ export const rateLimiterMiddleware = (req, res, next) => {
 
   next();
 };
-

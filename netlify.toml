@@ -3,16 +3,24 @@
   command = "npm run build"
 
 [functions]
-  external_node_modules = ["express", "pg", "sequelize", "cors"]
   node_bundler = "esbuild"
+  external_node_modules = ["pg", "pg-hstore"]
   
 [[redirects]]
   force = true
   from = "/api/*"
   status = 200
-  to = "/.netlify/functions/api/:splat"
+  to = "/.netlify/functions/api/api/:splat"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[dev]
+  command = "npm run dev"
+  port = 8888
+  targetPort = 5173
+
+  [build.environment]
+  NODE_VERSION = "18"

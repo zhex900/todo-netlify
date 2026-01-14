@@ -6,4 +6,3 @@ export const securityHeadersMiddleware = (req, res, next) => {
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
   next();
 };
-
